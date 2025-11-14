@@ -51,3 +51,30 @@ body {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* Cursor Pointers for Interactive Elements */
+button,
+a,
+select,
+[role="button"],
+[type="button"],
+[type="submit"],
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea {
+  cursor: text;
+}
+
+button:disabled,
+a:disabled {
+  cursor: not-allowed;
+}

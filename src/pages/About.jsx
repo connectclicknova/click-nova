@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             About <span className="text-primary">Click Nova</span>
@@ -50,12 +50,12 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -67,9 +67,9 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-purple-500 hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
@@ -139,17 +139,28 @@ const About = () => {
                 title: 'Continuous Learning',
                 description: 'We invest in ongoing education and development to ensure we stay at the forefront of our industry.',
               },
-            ].map((value, index) => (
-              <div key={index} className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            ].map((value, index) => {
+              const valueColors = [
+                { bg: 'bg-gradient-to-br from-blue-100 to-blue-200', text: 'text-blue-600' },
+                { bg: 'bg-gradient-to-br from-purple-100 to-purple-200', text: 'text-purple-600' },
+                { bg: 'bg-gradient-to-br from-cyan-100 to-cyan-200', text: 'text-cyan-600' },
+                { bg: 'bg-gradient-to-br from-green-100 to-green-200', text: 'text-green-600' },
+                { bg: 'bg-gradient-to-br from-amber-100 to-amber-200', text: 'text-amber-600' },
+                { bg: 'bg-gradient-to-br from-rose-100 to-rose-200', text: 'text-rose-600' },
+              ];
+              const valueColor = valueColors[index % valueColors.length];
+              return (
+              <div key={index} className="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-gray-200">
+                <div className={`w-16 h-16 ${valueColor.bg} rounded-lg flex items-center justify-center mb-4`}>
+                  <svg className={`w-8 h-8 ${valueColor.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {value.icon}
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -198,7 +209,7 @@ const About = () => {
       </section> */}
 
       {/* Stats Section */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Our Impact</h2>

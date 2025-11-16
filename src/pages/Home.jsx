@@ -9,8 +9,12 @@ const Home = () => {
     <div className="min-h-screen">
       <FreeQuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-gray-100 pt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24 pb-20 overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}}></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
@@ -37,8 +41,8 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-primary/10 flex items-center justify-center">
-                <svg className="w-3/4 h-3/4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 via-purple-100 to-cyan-100 flex items-center justify-center shadow-2xl">
+                <svg className="w-3/4 h-3/4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
@@ -48,7 +52,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-primary py-16">
+      <section className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -78,7 +82,7 @@ const Home = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold tracking-wider">
+              <span className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 px-6 py-2 rounded-full text-sm font-semibold tracking-wider">
                 OUR DNA
               </span>
             </div>
@@ -256,13 +260,26 @@ const Home = () => {
                 title: 'Logo Designing',
                 description: 'Stand out with unique, memorable logo designs that perfectly represent your brand.',
               },
-            ].map((service, index) => (
+            ].map((service, index) => {
+              const colors = [
+                { bg: 'bg-blue-100', text: 'text-blue-600', border: 'hover:border-blue-500' },
+                { bg: 'bg-purple-100', text: 'text-purple-600', border: 'hover:border-purple-500' },
+                { bg: 'bg-cyan-100', text: 'text-cyan-600', border: 'hover:border-cyan-500' },
+                { bg: 'bg-green-100', text: 'text-green-600', border: 'hover:border-green-500' },
+                { bg: 'bg-amber-100', text: 'text-amber-600', border: 'hover:border-amber-500' },
+                { bg: 'bg-rose-100', text: 'text-rose-600', border: 'hover:border-rose-500' },
+                { bg: 'bg-indigo-100', text: 'text-indigo-600', border: 'hover:border-indigo-500' },
+                { bg: 'bg-teal-100', text: 'text-teal-600', border: 'hover:border-teal-500' },
+                { bg: 'bg-orange-100', text: 'text-orange-600', border: 'hover:border-orange-500' },
+              ];
+              const color = colors[index % colors.length];
+              return (
               <div
                 key={index}
-                className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary flex flex-col"
+                className={`bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-200 ${color.border} flex flex-col hover:scale-105`}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-16 h-16 ${color.bg} rounded-lg flex items-center justify-center mb-4`}>
+                  <svg className={`w-8 h-8 ${color.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {service.icon}
                   </svg>
                 </div>
@@ -275,7 +292,8 @@ const Home = () => {
                   Get Free Quote
                 </button>
               </div>
-            ))}
+            );
+            })}
           </div>
 
           <div className="text-center mt-12">
@@ -293,7 +311,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Click Nova?</h2>
@@ -332,23 +350,32 @@ const Home = () => {
                 title: 'Custom Solutions',
                 description: 'Tailored strategies that fit your unique business goals',
               },
-            ].map((feature, index) => (
+            ].map((feature, index) => {
+              const iconColors = [
+                { bg: 'bg-gradient-to-br from-green-100 to-green-200', text: 'text-green-600' },
+                { bg: 'bg-gradient-to-br from-purple-100 to-purple-200', text: 'text-purple-600' },
+                { bg: 'bg-gradient-to-br from-amber-100 to-amber-200', text: 'text-amber-600' },
+                { bg: 'bg-gradient-to-br from-cyan-100 to-cyan-200', text: 'text-cyan-600' },
+              ];
+              const iconColor = iconColors[index];
+              return (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-20 h-20 ${iconColor.bg} rounded-full flex items-center justify-center mx-auto mb-4 shadow-md`}>
+                  <svg className={`w-10 h-10 ${iconColor.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {feature.icon}
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Grow Your Business?

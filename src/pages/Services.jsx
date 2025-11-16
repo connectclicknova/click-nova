@@ -256,7 +256,7 @@ const Services = () => {
       />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Our <span className="text-primary">Services</span>
@@ -272,13 +272,26 @@ const Services = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service, index) => {
+              const colors = [
+                { bg: 'bg-gradient-to-br from-blue-100 to-blue-200', text: 'text-blue-600', border: 'hover:border-blue-400', shadow: 'hover:shadow-blue-200' },
+                { bg: 'bg-gradient-to-br from-purple-100 to-purple-200', text: 'text-purple-600', border: 'hover:border-purple-400', shadow: 'hover:shadow-purple-200' },
+                { bg: 'bg-gradient-to-br from-cyan-100 to-cyan-200', text: 'text-cyan-600', border: 'hover:border-cyan-400', shadow: 'hover:shadow-cyan-200' },
+                { bg: 'bg-gradient-to-br from-green-100 to-green-200', text: 'text-green-600', border: 'hover:border-green-400', shadow: 'hover:shadow-green-200' },
+                { bg: 'bg-gradient-to-br from-amber-100 to-amber-200', text: 'text-amber-600', border: 'hover:border-amber-400', shadow: 'hover:shadow-amber-200' },
+                { bg: 'bg-gradient-to-br from-rose-100 to-rose-200', text: 'text-rose-600', border: 'hover:border-rose-400', shadow: 'hover:shadow-rose-200' },
+                { bg: 'bg-gradient-to-br from-indigo-100 to-indigo-200', text: 'text-indigo-600', border: 'hover:border-indigo-400', shadow: 'hover:shadow-indigo-200' },
+                { bg: 'bg-gradient-to-br from-teal-100 to-teal-200', text: 'text-teal-600', border: 'hover:border-teal-400', shadow: 'hover:shadow-teal-200' },
+                { bg: 'bg-gradient-to-br from-orange-100 to-orange-200', text: 'text-orange-600', border: 'hover:border-orange-400', shadow: 'hover:shadow-orange-200' },
+              ];
+              const color = colors[index % colors.length];
+              return (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-primary flex flex-col"
+                className={`bg-white border-2 border-gray-100 rounded-xl p-8 hover:shadow-2xl transition-all duration-300 ${color.border} flex flex-col group`}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-16 h-16 ${color.bg} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <svg className={`w-8 h-8 ${color.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {service.icon}
                   </svg>
                 </div>
@@ -306,13 +319,14 @@ const Services = () => {
                   Get Free Quote
                 </button>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
@@ -343,15 +357,23 @@ const Services = () => {
                 title: 'Optimization',
                 description: 'Continuously monitor, analyze, and refine strategies for maximum performance.',
               },
-            ].map((process, index) => (
+            ].map((process, index) => {
+              const stepColors = [
+                'bg-gradient-to-br from-blue-500 to-blue-600',
+                'bg-gradient-to-br from-purple-500 to-purple-600',
+                'bg-gradient-to-br from-cyan-500 to-cyan-600',
+                'bg-gradient-to-br from-green-500 to-green-600',
+              ];
+              return (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                <div className={`w-20 h-20 ${stepColors[index]} text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg`}>
                   {process.step}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{process.title}</h3>
                 <p className="text-gray-600">{process.description}</p>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -376,20 +398,32 @@ const Services = () => {
               'Education',
               'Hospitality',
               'Professional Services',
-            ].map((industry, index) => (
+            ].map((industry, index) => {
+              const industryColors = [
+                'hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600',
+                'hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-600',
+                'hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-600',
+                'hover:bg-gradient-to-r hover:from-green-500 hover:to-green-600',
+                'hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600',
+                'hover:bg-gradient-to-r hover:from-rose-500 hover:to-rose-600',
+                'hover:bg-gradient-to-r hover:from-indigo-500 hover:to-indigo-600',
+                'hover:bg-gradient-to-r hover:from-teal-500 hover:to-teal-600',
+              ];
+              return (
               <div
                 key={index}
-                className="bg-gray-50 p-6 rounded-lg text-center hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer border border-gray-200 hover:border-primary"
+                className={`bg-white p-6 rounded-lg text-center hover:text-white transition-all duration-300 cursor-pointer border-2 border-gray-200 hover:border-transparent hover:scale-105 hover:shadow-xl ${industryColors[index % industryColors.length]}`}
               >
                 <p className="font-medium">{industry}</p>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Transform Your Digital Presence?

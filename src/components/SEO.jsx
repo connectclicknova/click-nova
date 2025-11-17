@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const SEO = ({ 
   title = "Click Nova - Best Digital Marketing Agency | Social Media, Google Ads & Website Development",

@@ -1,0 +1,26 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://www.clicknova.in/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Google bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing bots
+User-agent: Bingbot
+Allow: /
+
+# Yahoo bots
+User-agent: Slurp
+Allow: /

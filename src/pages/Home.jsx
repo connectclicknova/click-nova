@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FreeQuoteModal from '../components/FreeQuoteModal';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Click Nova - Best Digital Marketing Agency | Social Media, Google Ads & Website Development"
+        description="Click Nova is the best digital marketing agency offering expert social media marketing, Facebook ads, Google ads, Instagram ads, YouTube ads, website development, ecommerce website solutions, mobile app development, and software development services to grow your business online."
+        keywords="digital marketing agency, best digital marketing agency, social media marketing, Facebook ads, Google ads, Instagram ads, YouTube ads, software development, ecommerce website, website development, mobile app development, SEO services, PPC advertising, digital marketing services, online marketing agency"
+        canonical="https://www.clicknova.in/"
+      />
       <FreeQuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24 pb-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24 pb-20 overflow-hidden" aria-label="Hero section">
         {/* Decorative Elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" aria-hidden="true"></div>
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}} aria-hidden="true"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}} aria-hidden="true"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-                Elevate Your
-                <span className="text-primary block">Digital Presence</span>
+                Best Digital Marketing Agency
+                <span className="text-primary block">Grow Your Business Online</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Transform your business with data-driven digital marketing strategies that deliver
-                measurable results and sustainable growth.
+                Click Nova is the best digital marketing agency offering expert social media marketing, Google ads, Facebook ads, Instagram ads, YouTube ads, website development, ecommerce website solutions, mobile app development, and software development services to transform your business with data-driven strategies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

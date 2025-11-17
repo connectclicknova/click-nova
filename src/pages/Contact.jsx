@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   const services = [
@@ -92,6 +93,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <SEO 
+        title="Contact Click Nova - Best Digital Marketing Agency | Get in Touch"
+        description="Contact Click Nova for digital marketing services including social media marketing, Google ads, Facebook ads, Instagram ads, website development, mobile app development, and software development. Reach us for inquiries and consultations."
+        keywords="contact digital marketing agency, click nova contact, social media marketing inquiry, google ads consultation, website development contact, mobile app development inquiry, software development services"
+        canonical="https://www.clicknova.in/contact"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TrainingModal from '../components/TrainingModal';
+import SEO from '../components/SEO';
 
 const Training = () => {
   const [isTrainingModalOpen, setIsTrainingModalOpen] = useState(false);
@@ -112,6 +113,12 @@ const Training = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <SEO 
+        title="Professional Training Programs - Web Development, Mobile App Development | Click Nova"
+        description="Transform your career with Click Nova's comprehensive training programs. Learn Full Stack Development, Front-End Development, Back-End Development, Mobile App Development, Digital Marketing, and Software Development from industry experts."
+        keywords="web development training, mobile app development courses, full stack developer training, front-end development course, back-end development training, digital marketing training, software development courses, programming training"
+        canonical="https://www.clicknova.in/training"
+      />
       <TrainingModal isOpen={isTrainingModalOpen} onClose={() => setIsTrainingModalOpen(false)} />
       
       {/* Hero Section */}

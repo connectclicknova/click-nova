@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { db } from '../firebase/config';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const TrainingModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,7 @@ const TrainingModal = ({ isOpen, onClose }) => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const courses = [
     'Full Stack Development',
@@ -51,15 +54,36 @@ const TrainingModal = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Training Enrollment Data:', formData);
+    try {
+      // Save to Firebase - using freequotefromwebsite collection for training inquiries
+      await addDoc(collection(db, 'freequotefromwebsite'), {
+        fullName: formData.fullName,
+        mobile: formData.mobile,
+        city: formData.city,
+        course: formData.course,
+        duration: formData.duration,
+        type: 'training',
+        submittedAt: serverTimestamp(),
+        status: 'new'
+      });
+      
+      setSubmitStatus('success');
       alert('Thank you for enrolling! We will contact you soon to confirm your training.');
       setFormData({ fullName: '', mobile: '', city: '', course: '', duration: '' });
+      
+      setTimeout(() => {
+        onClose();
+        setSubmitStatus(null);
+      }, 1500);
+    } catch (error) {
+      console.error('Error submitting training form:', error);
+      setSubmitStatus('error');
+      alert('Sorry, there was an error submitting your request. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      onClose();
-    }, 1000);
+    }
   };
 
   if (!isOpen) return null;

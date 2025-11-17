@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { db } from '../firebase/config';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const ApplicationModal = ({ isOpen, onClose, jobTitle = '', jobOpenings = [] }) => {
   const [formData, setFormData] = useState({
@@ -44,10 +46,17 @@ const ApplicationModal = ({ isOpen, onClose, jobTitle = '', jobOpenings = [] }) 
     setSubmitStatus(null);
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      console.log('Application submitted:', formData);
+      // Save to Firebase
+      await addDoc(collection(db, 'careersfromwebsite'), {
+        name: formData.name,
+        mobile: formData.mobile,
+        email: formData.email,
+        qualification: formData.qualification,
+        applyingFor: formData.applyingFor,
+        city: formData.city,
+        submittedAt: serverTimestamp(),
+        status: 'new'
+      });
       
       setSubmitStatus('success');
       setFormData({

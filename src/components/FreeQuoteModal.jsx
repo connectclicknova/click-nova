@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { db } from '../firebase/config';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const FreeQuoteModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ const FreeQuoteModal = ({ isOpen, onClose }) => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -31,15 +34,33 @@ const FreeQuoteModal = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Free Quote Form Data:', formData);
+    try {
+      // Save to Firebase
+      await addDoc(collection(db, 'freequotefromwebsite'), {
+        name: formData.name,
+        mobile: formData.mobile,
+        city: formData.city,
+        submittedAt: serverTimestamp(),
+        status: 'new'
+      });
+      
+      setSubmitStatus('success');
       alert('Thank you! We will contact you soon with a free quote.');
       setFormData({ name: '', mobile: '', city: '' });
+      
+      setTimeout(() => {
+        onClose();
+        setSubmitStatus(null);
+      }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      alert('Sorry, there was an error submitting your request. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      onClose();
-    }, 1000);
+    }
   };
 
   if (!isOpen) return null;

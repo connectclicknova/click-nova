@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SEO from '../components/SEO';
+import { db } from '../firebase/config';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Contact = () => {
   const services = [
@@ -69,12 +71,21 @@ const Contact = () => {
     setIsDropdownOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Save to Firebase
+      await addDoc(collection(db, 'contactsfromwebsite'), {
+        name: formData.name,
+        mobile: formData.mobile,
+        city: formData.city,
+        service: formData.service,
+        submittedAt: serverTimestamp(),
+        status: 'new'
+      });
+
       setIsSubmitting(false);
       setSubmitMessage('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
       setFormData({
@@ -88,7 +99,15 @@ const Contact = () => {
       setTimeout(() => {
         setSubmitMessage('');
       }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      setIsSubmitting(false);
+      setSubmitMessage('Sorry, there was an error submitting your request. Please try again.');
+      
+      setTimeout(() => {
+        setSubmitMessage('');
+      }, 5000);
+    }
   };
 
   return (

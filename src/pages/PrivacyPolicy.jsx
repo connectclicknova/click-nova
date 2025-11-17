@@ -1,8 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen pt-16">
+      <SEO 
+        title="Privacy Policy - Click Nova Digital Marketing Agency"
+        description="Learn about Click Nova's privacy policy and how we protect your data when using our digital marketing services."
+        keywords="privacy policy, click nova privacy, data protection, privacy terms"
+        canonical="https://www.clicknova.in/privacy"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

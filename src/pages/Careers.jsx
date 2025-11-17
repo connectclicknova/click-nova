@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ApplicationModal from '../components/ApplicationModal';
+import SEO from '../components/SEO';
 
 const Careers = () => {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -100,6 +101,12 @@ const Careers = () => {
         onClose={() => setIsApplicationModalOpen(false)}
         jobTitle={selectedJobTitle}
         jobOpenings={jobOpenings}
+      />
+      <SEO 
+        title="Careers at Click Nova - App Developer, Website Developer, Software Developer Jobs"
+        description="Join Click Nova's team! Current job openings: App Developer for mobile app development, Website Developer for web development, Software Developer for software development. Build your career with a leading digital marketing agency."
+        keywords="app developer jobs, website developer careers, software developer openings, mobile app developer vacancy, web developer jobs, software engineer positions, digital marketing agency careers"
+        canonical="https://www.clicknova.in/careers"
       />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">

@@ -1,8 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
     <div className="min-h-screen pt-16">
+      <SEO 
+        title="About Click Nova - Best Digital Marketing Agency | Expert Team"
+        description="Learn about Click Nova, a leading digital marketing agency specializing in social media marketing, Google ads, Facebook ads, website development, mobile app development, and software development. Expert team delivering innovative solutions."
+        keywords="about click nova, digital marketing agency, social media marketing experts, Google ads specialists, Facebook advertising agency, website development company, mobile app developers, software development services"
+        canonical="https://www.clicknova.in/about"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

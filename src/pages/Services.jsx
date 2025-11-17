@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FreeQuoteModal from '../components/FreeQuoteModal';
+import SEO from '../components/SEO';
 
 const Services = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -250,20 +251,25 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <SEO 
+        title="Digital Marketing Services - Social Media, Google Ads, Website Development | Click Nova"
+        description="Expert digital marketing services including social media marketing, Facebook ads, Google ads, Instagram ads, YouTube ads, SEO, PPC advertising, website development, ecommerce websites, mobile app development, and software development."
+        keywords="digital marketing services, social media marketing, Facebook ads management, Google ads services, Instagram ads, YouTube advertising, SEO services, PPC advertising, website development services, ecommerce website development, mobile app development services, software development, content marketing, email marketing"
+        canonical="https://www.clicknova.in/services"
+      />
       <FreeQuoteModal 
         isOpen={isQuoteModalOpen} 
         onClose={() => setIsQuoteModalOpen(false)} 
       />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20" aria-label="Services hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-primary">Services</span>
+            Digital Marketing <span className="text-primary">Services</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive digital marketing solutions designed to help your business thrive in the digital landscape.
-            We combine strategy, creativity, and technology to deliver exceptional results.
+            Best digital marketing agency offering comprehensive services including social media marketing, Google ads, Facebook ads, Instagram ads, website development, ecommerce solutions, mobile app development, and software development to help your business thrive online.
           </p>
         </div>
       </section>

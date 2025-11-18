@@ -1,0 +1,50 @@
+# Click Nova - Security & Privacy Configuration
+
+## Secure Headers Configuration (Vercel)
+All HTTP security headers are configured in `vercel.json`:
+- Content-Security-Policy (CSP)
+- X-Frame-Options
+- X-Content-Type-Options
+- Referrer-Policy
+- Permissions-Policy
+- Strict-Transport-Security (HSTS)
+- X-XSS-Protection
+
+## Firebase Security
+- Firestore security rules: `firestore.rules`
+- Environment variables: `.env` (gitignored)
+- Admin-only read access
+- Public write-only with validation
+- Input sanitization and validation
+
+## Privacy & Data Protection
+- No third-party tracking (except Google Analytics)
+- No cookies without consent
+- Form data stored securely in Firebase
+- HTTPS enforced everywhere
+- Referrer information limited
+
+## Deployment Security
+Platform: Vercel
+- Automatic HTTPS/SSL
+- DDoS protection via Edge Network
+- CDN with security headers
+- Environment variable encryption
+- Preview deployments isolated
+
+## Monitoring & Maintenance
+Run these commands regularly:
+```bash
+npm audit                 # Check for vulnerabilities
+npm audit fix            # Fix vulnerabilities
+npm update               # Update dependencies
+```
+
+## Security Testing
+Test your deployment at:
+- https://securityheaders.com
+- https://observatory.mozilla.org
+- https://www.ssllabs.com/ssltest/
+
+## Contact
+Security issues: support@clicknova.co.in

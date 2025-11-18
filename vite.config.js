@@ -22,12 +22,6 @@ export default defineConfig({
       }
     },
     sourcemap: false, // Don't expose source maps in production
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-        drop_debugger: true
-      }
-    }
+    minify: 'esbuild' // Use esbuild (default, faster and included with Vite)
   }
 })

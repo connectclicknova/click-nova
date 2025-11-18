@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center" style={{height: '100px'}}>
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img src={Logo} alt="Click Nova" className='w-[230px]' />
@@ -44,8 +44,8 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-gray-700 hover:text-primary transition-colors duration-300 font-medium ${
-                  isActive(link.path) ? 'text-primary border-b-2 border-primary' : ''
+                className={`text-gray-700 hover:text-secondary transition-colors duration-300 font-medium ${
+                  isActive(link.path) ? 'text-secondary border-b-2 border-secondary' : ''
                 }`}
               >
                 {link.label}

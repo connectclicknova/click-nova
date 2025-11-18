@@ -111,7 +111,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
         title="Contact Click Nova - Best Digital Marketing Agency | Get in Touch"
         description="Contact Click Nova for digital marketing services including social media marketing, Google ads, Facebook ads, Instagram ads, website development, mobile app development, and software development. Reach us for inquiries and consultations."
@@ -119,7 +119,7 @@ const Contact = () => {
         canonical="https://www.clicknova.in/contact"
       />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
+      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Get In <span className="text-primary">Touch</span>
@@ -275,8 +275,8 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-emerald-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -353,7 +353,7 @@ const Contact = () => {
                     },
                   ].map((social, index) => {
                     const socialColors = [
-                      'hover:bg-blue-500',
+                      'hover:bg-orange-500',
                       'hover:bg-cyan-400',
                       'hover:bg-purple-600',
                       'hover:bg-pink-500',
@@ -375,10 +375,10 @@ const Contact = () => {
               </div>
 
               {/* Business Hours */}
-              <div className="mt-10 bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-blue-100">
+              <div className="mt-10 bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-100">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Working Hours</h3>
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                  <div className="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-emerald-700 text-white px-6 py-3 rounded-lg shadow-lg">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>

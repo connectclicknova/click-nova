@@ -112,7 +112,7 @@ const Training = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
         title="Professional Training Programs - Web Development, Mobile App Development | Click Nova"
         description="Transform your career with Click Nova's comprehensive training programs. Learn Full Stack Development, Front-End Development, Back-End Development, Mobile App Development, Digital Marketing, and Software Development from industry experts."
@@ -122,7 +122,7 @@ const Training = () => {
       <TrainingModal isOpen={isTrainingModalOpen} onClose={() => setIsTrainingModalOpen(false)} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20">
+      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Professional <span className="text-primary">Training Programs</span>
@@ -140,12 +140,12 @@ const Training = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course, index) => {
               const colors = [
-                { bg: 'bg-gradient-to-br from-blue-100 to-blue-200', text: 'text-blue-600', border: 'hover:border-blue-400' },
-                { bg: 'bg-gradient-to-br from-purple-100 to-purple-200', text: 'text-purple-600', border: 'hover:border-purple-400' },
-                { bg: 'bg-gradient-to-br from-cyan-100 to-cyan-200', text: 'text-cyan-600', border: 'hover:border-cyan-400' },
-                { bg: 'bg-gradient-to-br from-green-100 to-green-200', text: 'text-green-600', border: 'hover:border-green-400' },
-                { bg: 'bg-gradient-to-br from-amber-100 to-amber-200', text: 'text-amber-600', border: 'hover:border-amber-400' },
-                { bg: 'bg-gradient-to-br from-rose-100 to-rose-200', text: 'text-rose-600', border: 'hover:border-rose-400' },
+                { bg: 'bg-gradient-to-br from-green-100 to-emerald-200', text: 'text-green-700', border: 'hover:border-green-400' },
+                { bg: 'bg-gradient-to-br from-orange-100 to-orange-200', text: 'text-orange-600', border: 'hover:border-orange-400' },
+                { bg: 'bg-gradient-to-br from-teal-100 to-teal-200', text: 'text-teal-600', border: 'hover:border-teal-400' },
+                { bg: 'bg-gradient-to-br from-emerald-100 to-green-200', text: 'text-emerald-700', border: 'hover:border-emerald-400' },
+                { bg: 'bg-gradient-to-br from-amber-100 to-orange-200', text: 'text-amber-700', border: 'hover:border-amber-400' },
+                { bg: 'bg-gradient-to-br from-lime-100 to-green-200', text: 'text-lime-700', border: 'hover:border-lime-400' },
               ];
               const color = colors[index % colors.length];
               return (
@@ -209,7 +209,7 @@ const Training = () => {
       </section>
 
       {/* Why Choose Our Training */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Training?</h2>
@@ -269,7 +269,7 @@ const Training = () => {
           <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Start Your Learning Journey?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-green-100 mb-8">
             Join thousands of students who have transformed their careers with our training programs
           </p>
           <Link

@@ -250,7 +250,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
         title="Digital Marketing Services - Social Media, Google Ads, Website Development | Click Nova"
         description="Expert digital marketing services including social media marketing, Facebook ads, Google ads, Instagram ads, YouTube ads, SEO, PPC advertising, website development, ecommerce websites, mobile app development, and software development."
@@ -263,7 +263,7 @@ const Services = () => {
       />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 py-20" aria-label="Services hero">
+      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-20" aria-label="Services hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Digital Marketing <span className="text-primary">Services</span>
@@ -280,15 +280,15 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const colors = [
-                { bg: 'bg-gradient-to-br from-blue-100 to-blue-200', text: 'text-blue-600', border: 'hover:border-blue-400', shadow: 'hover:shadow-blue-200' },
-                { bg: 'bg-gradient-to-br from-purple-100 to-purple-200', text: 'text-purple-600', border: 'hover:border-purple-400', shadow: 'hover:shadow-purple-200' },
-                { bg: 'bg-gradient-to-br from-cyan-100 to-cyan-200', text: 'text-cyan-600', border: 'hover:border-cyan-400', shadow: 'hover:shadow-cyan-200' },
-                { bg: 'bg-gradient-to-br from-green-100 to-green-200', text: 'text-green-600', border: 'hover:border-green-400', shadow: 'hover:shadow-green-200' },
-                { bg: 'bg-gradient-to-br from-amber-100 to-amber-200', text: 'text-amber-600', border: 'hover:border-amber-400', shadow: 'hover:shadow-amber-200' },
-                { bg: 'bg-gradient-to-br from-rose-100 to-rose-200', text: 'text-rose-600', border: 'hover:border-rose-400', shadow: 'hover:shadow-rose-200' },
-                { bg: 'bg-gradient-to-br from-indigo-100 to-indigo-200', text: 'text-indigo-600', border: 'hover:border-indigo-400', shadow: 'hover:shadow-indigo-200' },
-                { bg: 'bg-gradient-to-br from-teal-100 to-teal-200', text: 'text-teal-600', border: 'hover:border-teal-400', shadow: 'hover:shadow-teal-200' },
+                { bg: 'bg-gradient-to-br from-green-100 to-emerald-200', text: 'text-green-700', border: 'hover:border-green-400', shadow: 'hover:shadow-green-200' },
                 { bg: 'bg-gradient-to-br from-orange-100 to-orange-200', text: 'text-orange-600', border: 'hover:border-orange-400', shadow: 'hover:shadow-orange-200' },
+                { bg: 'bg-gradient-to-br from-teal-100 to-teal-200', text: 'text-teal-600', border: 'hover:border-teal-400', shadow: 'hover:shadow-teal-200' },
+                { bg: 'bg-gradient-to-br from-emerald-100 to-green-200', text: 'text-emerald-700', border: 'hover:border-emerald-400', shadow: 'hover:shadow-emerald-200' },
+                { bg: 'bg-gradient-to-br from-amber-100 to-orange-200', text: 'text-amber-700', border: 'hover:border-amber-400', shadow: 'hover:shadow-amber-200' },
+                { bg: 'bg-gradient-to-br from-lime-100 to-green-200', text: 'text-lime-700', border: 'hover:border-lime-400', shadow: 'hover:shadow-lime-200' },
+                { bg: 'bg-gradient-to-br from-cyan-100 to-teal-200', text: 'text-cyan-700', border: 'hover:border-cyan-400', shadow: 'hover:shadow-cyan-200' },
+                { bg: 'bg-gradient-to-br from-green-100 to-teal-200', text: 'text-green-700', border: 'hover:border-green-400', shadow: 'hover:shadow-green-200' },
+                { bg: 'bg-gradient-to-br from-orange-100 to-amber-200', text: 'text-orange-700', border: 'hover:border-orange-400', shadow: 'hover:shadow-orange-200' },
               ];
               const color = colors[index % colors.length];
               return (
@@ -332,7 +332,7 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
@@ -365,7 +365,7 @@ const Services = () => {
               },
             ].map((process, index) => {
               const stepColors = [
-                'bg-gradient-to-br from-blue-500 to-blue-600',
+                'bg-gradient-to-br from-green-600 to-emerald-700',
                 'bg-gradient-to-br from-purple-500 to-purple-600',
                 'bg-gradient-to-br from-cyan-500 to-cyan-600',
                 'bg-gradient-to-br from-green-500 to-green-600',
@@ -406,7 +406,7 @@ const Services = () => {
               'Professional Services',
             ].map((industry, index) => {
               const industryColors = [
-                'hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600',
+                'hover:bg-gradient-to-r hover:from-green-600 hover:to-emerald-700',
                 'hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-600',
                 'hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-600',
                 'hover:bg-gradient-to-r hover:from-green-500 hover:to-green-600',
@@ -429,12 +429,12 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
+      <section className="py-20 bg-gradient-to-r from-green-700 via-emerald-700 to-teal-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Transform Your Digital Presence?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-green-100 mb-8">
             Let's create a custom strategy that drives real results for your business
           </p>
           <Link

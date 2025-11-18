@@ -2,11 +2,11 @@
 
 /* Custom CSS Variables - Professional Colorful Palette */
 :root {
-  --primary: #2286b6;
-  --primary-dark: #1e40af;   /* Deep Blue */
-  --primary-light: #60a5fa;  /* Light Blue */
-  --secondary: #8b5cf6;      /* Purple */
-  --accent: #06b6d4;         /* Cyan */
+  --primary: #005c4c;
+  --primary-dark: #004438;   /* Darker Green */
+  --primary-light: #007a66;  /* Lighter Green */
+  --secondary: #fc8d00;      /* Orange - Active Color */
+  --accent: #fc8d00;         /* Orange - Active Color */
   --success: #10b981;        /* Green */
   --warning: #f59e0b;        /* Amber */
   --danger: #ef4444;         /* Red */

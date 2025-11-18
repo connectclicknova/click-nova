@@ -1,0 +1,5 @@
+Contact: mailto:support@clicknova.co.in
+Preferred-Languages: en
+Canonical: https://clicknova.co.in/.well-known/security.txt
+Expires: 2026-12-31T23:59:59.000Z
+Acknowledgments: https://clicknova.co.in/

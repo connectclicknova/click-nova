@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const TermsConditions = () => {
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
         title="Terms & Conditions - Click Nova Digital Marketing Agency"
         description="Read Click Nova's terms and conditions for using our digital marketing services including social media marketing, Google ads, website development, and software development."

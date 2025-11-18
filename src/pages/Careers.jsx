@@ -95,7 +95,7 @@ const Careers = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <ApplicationModal
         isOpen={isApplicationModalOpen}
         onClose={() => setIsApplicationModalOpen(false)}
@@ -119,13 +119,13 @@ const Careers = () => {
       </section>
 
       {/* Why Join Us Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Why Work With Us?</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-blue-500">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-green-600">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-emerald-200 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -179,7 +179,7 @@ const Careers = () => {
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{job.title}</h3>
                       <div className="flex flex-wrap gap-3">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-green-100 to-emerald-200 text-green-700">
                           {job.department}
                         </span>
                         <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-purple-100 to-purple-200 text-purple-700">
@@ -251,7 +251,7 @@ const Careers = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50">
+      <section className="py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Don't See the Right Position?</h2>
           <p className="text-xl text-gray-600 mb-8">

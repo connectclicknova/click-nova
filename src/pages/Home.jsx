@@ -16,9 +16,9 @@ const Home = () => {
       />
       <FreeQuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24 pb-20 overflow-hidden" aria-label="Hero section">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-orange-50 overflow-hidden" style={{paddingTop: '100px', paddingBottom: '80px'}} aria-label="Hero section">
         {/* Decorative Elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" aria-hidden="true"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" aria-hidden="true"></div>
         <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}} aria-hidden="true"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}} aria-hidden="true"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -47,8 +47,8 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 via-purple-100 to-cyan-100 flex items-center justify-center shadow-2xl">
-                <svg className="w-3/4 h-3/4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100 flex items-center justify-center shadow-2xl">
+                <svg className="w-3/4 h-3/4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
@@ -58,7 +58,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 py-16">
+      <section className="bg-gradient-to-r from-green-700 via-emerald-700 to-teal-700 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -69,7 +69,7 @@ const Home = () => {
             ].map((stat, index) => (
               <div key={index} className="text-center text-white">
                 <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-blue-100 text-sm md:text-base">{stat.label}</div>
+                <div className="text-green-100 text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -88,7 +88,7 @@ const Home = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 px-6 py-2 rounded-full text-sm font-semibold tracking-wider">
+              <span className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 px-6 py-2 rounded-full text-sm font-semibold tracking-wider">
                 OUR DNA
               </span>
             </div>
@@ -109,7 +109,7 @@ const Home = () => {
           <div className="max-w-5xl mx-auto space-y-8">
             {[
               { letter: 'C', word: 'CREATIVITY', icon: '🎨', description: 'Innovative solutions that set you apart from the competition', color: 'from-purple-500 to-purple-600', borderColor: 'border-purple-500', hoverBorderColor: 'hover:border-purple-500' },
-              { letter: 'L', word: 'LOYALTY', icon: '🤝', description: 'Building long-term partnerships based on trust and dedication', color: 'from-blue-500 to-blue-600', borderColor: 'border-blue-500', hoverBorderColor: 'hover:border-blue-500' },
+              { letter: 'L', word: 'LOYALTY', icon: '🤝', description: 'Building long-term partnerships based on trust and dedication', color: 'from-green-600 to-emerald-700', borderColor: 'border-green-600', hoverBorderColor: 'hover:border-green-600' },
               { letter: 'I', word: 'INNOVATION', icon: '💡', description: 'Cutting-edge strategies that drive measurable growth', color: 'from-indigo-500 to-indigo-600', borderColor: 'border-indigo-500', hoverBorderColor: 'hover:border-indigo-500' },
               { letter: 'C', word: 'COLLABORATION', icon: '👥', description: 'Working together as one team towards your success', color: 'from-cyan-500 to-cyan-600', borderColor: 'border-cyan-500', hoverBorderColor: 'hover:border-cyan-500' },
               { letter: 'K', word: 'KNOWLEDGE', icon: '📚', description: 'Expert insights and industry-leading guidance', color: 'from-teal-500 to-teal-600', borderColor: 'border-teal-500', hoverBorderColor: 'hover:border-teal-500' },
@@ -268,7 +268,7 @@ const Home = () => {
               },
             ].map((service, index) => {
               const colors = [
-                { bg: 'bg-blue-100', text: 'text-blue-600', border: 'hover:border-blue-500' },
+                { bg: 'bg-green-100', text: 'text-green-700', border: 'hover:border-green-500' },
                 { bg: 'bg-purple-100', text: 'text-purple-600', border: 'hover:border-purple-500' },
                 { bg: 'bg-cyan-100', text: 'text-cyan-600', border: 'hover:border-cyan-500' },
                 { bg: 'bg-green-100', text: 'text-green-600', border: 'hover:border-green-500' },
@@ -317,7 +317,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Click Nova?</h2>
@@ -381,12 +381,12 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
+      <section className="py-20 bg-gradient-to-r from-green-700 via-emerald-700 to-teal-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Grow Your Business?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-green-100 mb-8">
             Let's discuss how we can help you achieve your digital marketing goals
           </p>
           <Link

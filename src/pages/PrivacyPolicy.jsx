@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
         title="Privacy Policy - Click Nova Digital Marketing Agency"
         description="Learn about Click Nova's privacy policy and how we protect your data when using our digital marketing services."

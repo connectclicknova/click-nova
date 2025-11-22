@@ -11,7 +11,7 @@ const About = () => {
         canonical="https://www.clicknova.in/about"
       />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             About <span className="text-primary">Click Nova</span>
@@ -57,12 +57,12 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-600 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-emerald-200 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600 hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-sky-200 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -148,12 +148,12 @@ const About = () => {
               },
             ].map((value, index) => {
               const valueColors = [
-                { bg: 'bg-gradient-to-br from-green-100 to-emerald-200', text: 'text-green-700' },
-                { bg: 'bg-gradient-to-br from-orange-100 to-orange-200', text: 'text-orange-600' },
-                { bg: 'bg-gradient-to-br from-teal-100 to-teal-200', text: 'text-teal-600' },
-                { bg: 'bg-gradient-to-br from-emerald-100 to-green-200', text: 'text-emerald-700' },
-                { bg: 'bg-gradient-to-br from-amber-100 to-orange-200', text: 'text-amber-700' },
-                { bg: 'bg-gradient-to-br from-lime-100 to-green-200', text: 'text-lime-700' },
+                { bg: 'bg-gradient-to-br from-blue-100 to-sky-200', text: 'text-blue-700' },
+                { bg: 'bg-gradient-to-br from-orange-100 to-orange-200', text: 'text-orange-700' },
+                { bg: 'bg-gradient-to-br from-cyan-100 to-cyan-200', text: 'text-cyan-600' },
+                { bg: 'bg-gradient-to-br from-sky-100 to-blue-200', text: 'text-sky-700' },
+                { bg: 'bg-gradient-to-br from-indigo-100 to-indigo-200', text: 'text-indigo-700' },
+                { bg: 'bg-gradient-to-br from-violet-100 to-blue-200', text: 'text-violet-700' },
               ];
               const valueColor = valueColors[index % valueColors.length];
               return (
@@ -216,11 +216,11 @@ const About = () => {
       </section> */}
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-green-700 via-emerald-700 to-teal-700">
+      <section className="py-20 bg-gradient-to-r from-blue-700 via-sky-700 to-cyan-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Our Impact</h2>
-            <p className="text-xl text-green-100">Numbers that showcase our commitment to excellence</p>
+            <p className="text-xl text-blue-100">Numbers that showcase our commitment to excellence</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -231,7 +231,7 @@ const About = () => {
             ].map((stat, index) => (
               <div key={index} className="text-center text-white">
                 <div className="text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-green-100">{stat.label}</div>
+                <div className="text-blue-100">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -229,7 +229,7 @@ const ApplicationModal = ({ isOpen, onClose, jobTitle = '', jobOpenings = [] }) 
 
                   {/* Submit Status */}
                   {submitStatus === 'success' && (
-                    <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                    <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded-lg">
                       Application submitted successfully!
                     </div>
                   )}

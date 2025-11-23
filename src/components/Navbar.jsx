@@ -4,6 +4,7 @@ import Logo from '../assets/Logo.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
   // Lock body scroll when menu is open
@@ -22,12 +23,52 @@ const Navbar = () => {
 
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
+    { path: '/services', label: 'Services', hasDropdown: true },
     { path: '/about', label: 'About' },
     { path: '/training', label: 'Training' },
     { path: '/careers', label: 'Careers' },
     { path: '/contact', label: 'Contact' },
   ];
+
+  const megaMenuData = {
+    websiteServices: [
+      { label: 'Website Design & Development', path: '/services' },
+      { label: 'E-Commerce Website', path: '/services' },
+      { label: 'Landing Page Design', path: '/services' },
+      { label: 'WordPress Development', path: '/services' },
+      { label: 'Website Redesign', path: '/services' },
+      { label: 'Mobile App Development', path: '/services' },
+      { label: 'Software Development', path: '/services' },
+    ],
+    digitalMarketing: [
+      { label: 'Social Media Marketing', path: '/services' },
+      { label: 'SEO Services', path: '/services' },
+      { label: 'Google Ads (PPC)', path: '/services' },
+      { label: 'Facebook & Instagram Ads', path: '/services' },
+      { label: 'YouTube Ads', path: '/services' },
+      { label: 'Content Marketing', path: '/services' },
+      { label: 'Email Marketing', path: '/services' },
+      { label: 'Influencer Marketing', path: '/services' },
+    ],
+    creativeBranding: [
+      { label: 'Logo Design', path: '/services' },
+      { label: 'Brand Identity Design', path: '/services' },
+      { label: 'Graphic Design', path: '/services' },
+      { label: 'Video Editing & Production', path: '/services' },
+      { label: 'AI Video Creation', path: '/services' },
+      { label: 'Social Media Graphics', path: '/services' },
+      { label: 'Brochure & Flyer Design', path: '/services' },
+    ],
+    businessSolutions: [
+      { label: 'Lead Generation', path: '/services' },
+      { label: 'CRM Solutions', path: '/services' },
+      { label: 'Marketing Automation', path: '/services' },
+      { label: 'Analytics & Reporting', path: '/services' },
+      { label: 'Conversion Optimization', path: '/services' },
+      { label: 'Online Reputation Management', path: '/services' },
+      { label: 'Business Consulting', path: '/services' },
+    ],
+  };
 
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 z-50">
@@ -41,15 +82,103 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <div 
                 key={link.path}
-                to={link.path}
-                className={`text-gray-700 hover:text-secondary transition-colors duration-300 font-medium ${
-                  isActive(link.path) ? 'text-secondary border-b-2 border-secondary' : ''
-                }`}
+                className="relative group"
               >
-                {link.label}
-              </Link>
+                <Link
+                  to={link.path}
+                  className={`flex items-center gap-1 text-gray-700 hover:text-secondary transition-colors duration-300 font-medium ${
+                    isActive(link.path) ? 'text-secondary border-b-2 border-secondary' : ''
+                  }`}
+                >
+                  {link.label}
+                  {link.hasDropdown && (
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                </Link>
+
+                {/* Mega Menu Dropdown */}
+                {link.hasDropdown && (
+                  <div className="absolute left-1/2 transform -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+                    style={{ top: '100%' }}
+                  >
+                    <div className="w-screen max-w-6xl bg-white shadow-2xl rounded-lg border border-gray-200">
+                      <div className="grid grid-cols-4 gap-8 p-8">
+                        {/* Website Services Column */}
+                        <div>
+                          <h3 className="text-gray-900 font-bold mb-4 text-sm uppercase tracking-wider border-b-2 border-[#fc8d00] pb-2">Website Services</h3>
+                          <ul className="space-y-2">
+                            {megaMenuData.websiteServices.map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  to={item.path}
+                                  className="text-gray-600 hover:text-[#fc8d00] hover:pl-2 transition-all duration-200 text-sm block py-1"
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Digital Marketing Column */}
+                        <div>
+                          <h3 className="text-gray-900 font-bold mb-4 text-sm uppercase tracking-wider border-b-2 border-[#fc8d00] pb-2">Digital Marketing</h3>
+                          <ul className="space-y-2">
+                            {megaMenuData.digitalMarketing.map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  to={item.path}
+                                  className="text-gray-600 hover:text-[#fc8d00] hover:pl-2 transition-all duration-200 text-sm block py-1"
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Creative & Branding Column */}
+                        <div>
+                          <h3 className="text-gray-900 font-bold mb-4 text-sm uppercase tracking-wider border-b-2 border-[#fc8d00] pb-2">Creative & Branding</h3>
+                          <ul className="space-y-2">
+                            {megaMenuData.creativeBranding.map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  to={item.path}
+                                  className="text-gray-600 hover:text-[#fc8d00] hover:pl-2 transition-all duration-200 text-sm block py-1"
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Business Solutions Column */}
+                        <div>
+                          <h3 className="text-gray-900 font-bold mb-4 text-sm uppercase tracking-wider border-b-2 border-[#fc8d00] pb-2">Business Solutions</h3>
+                          <ul className="space-y-2">
+                            {megaMenuData.businessSolutions.map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  to={item.path}
+                                  className="text-gray-600 hover:text-[#fc8d00] hover:pl-2 transition-all duration-200 text-sm block py-1"
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -136,7 +265,7 @@ const Navbar = () => {
                 className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                   isActive(link.path)
                     ? 'bg-primary text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    : 'text-gray-700 hover:bg-secondary/10 hover:text-secondary'
                 }`}
               >
                 {link.label}
@@ -147,7 +276,7 @@ const Navbar = () => {
             <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-3 rounded-lg text-base font-medium bg-primary text-white text-center mt-4 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="px-4 py-3 rounded-lg text-base font-medium bg-primary text-white text-center mt-4 shadow-md hover:shadow-lg hover:bg-secondary transition-all duration-300 cursor-pointer"
             >
               Get Started
             </Link>

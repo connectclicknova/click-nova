@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FreeQuoteModal from '../components/FreeQuoteModal';
 import SEO from '../components/SEO';
 import FloatingContactButton from '../components/FloatingContactButton';
+import Newsletter from '../components/Newsletter';
 
 const Services = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -429,23 +430,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-700 via-sky-700 to-cyan-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Digital Presence?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Let's create a custom strategy that drives real results for your business
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-white text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
-          >
-            Get a Free Consultation
-          </Link>
-        </div>
-      </section>
+      {/* Newsletter Section */}
+      <Newsletter />
       
       {/* Floating Contact Button */}
       <FloatingContactButton />

@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import FloatingContactButton from '../components/FloatingContactButton';
+import Newsletter from '../components/Newsletter';
 
 const About = () => {
   return (
@@ -238,6 +239,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <Newsletter />
       
       {/* Floating Contact Button */}
       <FloatingContactButton />

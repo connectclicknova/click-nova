@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FreeQuoteModal from '../components/FreeQuoteModal';
 import SEO from '../components/SEO';
 import FloatingContactButton from '../components/FloatingContactButton';
+import HeroSectionVideo from '../assets/click-nova-hero-section-video.mp4'
 
 const Home = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -30,7 +31,7 @@ const Home = () => {
             className="absolute top-0 left-0 w-full h-full object-cover"
             style={{ objectFit: 'cover' }}
           >
-            <source src="https://ik.imagekit.io/dlekfhyrb/Videos/click-nova-hero-section-video.mp4" type="video/mp4" />
+            <source src={HeroSectionVideo} type="video/mp4" />
           </video>
           
           {/* Lighter Overlay - Video should be visible through this */}
@@ -202,9 +203,9 @@ const Home = () => {
             ].map((service, index) => (
               <div key={index} className="group relative bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 {/* Number Badge */}
-                <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg">
+                {/* <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg">
                   {service.number}
-                </div>
+                </div> */}
 
                 {/* Icon Background */}
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-50 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary/5 transition-colors duration-300">

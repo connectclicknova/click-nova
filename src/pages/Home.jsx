@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FreeQuoteModal from '../components/FreeQuoteModal';
 import SEO from '../components/SEO';
 import FloatingContactButton from '../components/FloatingContactButton';
+import Newsletter from '../components/Newsletter';
 import HeroSectionVideo from '../assets/click-nova-hero-section-video.mp4'
 
 const Home = () => {
@@ -100,7 +101,7 @@ const Home = () => {
       </section>
 
       {/* Services Preview - New Design */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-10 sm:mb-12 lg:mb-16">
@@ -126,7 +127,7 @@ const Home = () => {
           </div>
           
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 icon: (
@@ -201,7 +202,7 @@ const Home = () => {
                 number: '09'
               },
             ].map((service, index) => (
-              <div key={index} className="group relative bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div key={index} className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 {/* Number Badge */}
                 {/* <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg">
                   {service.number}
@@ -248,7 +249,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
@@ -296,7 +297,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us - Professional Design */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-10 sm:mb-12 lg:mb-16">
@@ -314,7 +315,7 @@ const Home = () => {
           </div>
           
           {/* Features Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 icon: (
@@ -353,7 +354,7 @@ const Home = () => {
                 gradient: 'from-cyan-500 to-cyan-600'
               },
             ].map((feature, index) => (
-              <div key={index} className="group relative bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div key={index} className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 {/* Number Badge */}
                 <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg">
                   {feature.number}
@@ -380,7 +381,7 @@ const Home = () => {
       </section>
 
       {/* Our Process */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12 lg:mb-16">
             <p className="text-secondary font-semibold text-xs sm:text-sm tracking-wider uppercase mb-2 sm:mb-3">OUR PROCESS</p>
@@ -463,7 +464,7 @@ const Home = () => {
       </section>
 
       {/* Customer Reviews */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12 lg:mb-16">
             <p className="text-secondary font-semibold text-xs sm:text-sm tracking-wider uppercase mb-2 sm:mb-3">TESTIMONIALS</p>
@@ -475,7 +476,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 name: 'Rajesh Kumar',
@@ -520,7 +521,7 @@ const Home = () => {
                 image: 'MD'
               }
             ].map((review, index) => (
-              <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
@@ -549,31 +550,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-primary via-blue-700 to-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-            Ready to Grow Your Business?
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 sm:mb-8">
-            Let's discuss how we can help you achieve your digital marketing goals
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="bg-secondary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm sm:text-base"
-            >
-              Schedule a Free Consultation
-            </Link>
-            <button
-              onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm sm:text-base"
-            >
-              Get a Free Quote
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* Newsletter Section */}
+      <Newsletter />
       
       {/* Floating Contact Button */}
       <FloatingContactButton />

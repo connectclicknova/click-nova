@@ -5,6 +5,7 @@ import Logo from '../assets/Logo.png'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const location = useLocation();
 
   // Lock body scroll when menu is open
@@ -32,41 +33,41 @@ const Navbar = () => {
 
   const megaMenuData = {
     websiteServices: [
-      { label: 'Website Design & Development', path: '/services' },
-      { label: 'E-Commerce Website', path: '/services' },
-      { label: 'Landing Page Design', path: '/services' },
-      { label: 'WordPress Development', path: '/services' },
-      { label: 'Website Redesign', path: '/services' },
-      { label: 'Mobile App Development', path: '/services' },
-      { label: 'Software Development', path: '/services' },
+      { label: 'Custom Web Development', path: '/services/custom-web-development' },
+      { label: 'E-Commerce Development', path: '/services/ecommerce-development' },
+      { label: 'CMS Development', path: '/services/cms-development' },
+      { label: 'Responsive Web Design', path: '/services/responsive-web-design' },
+      { label: 'Landing Page Design', path: '/services/landing-page-design' },
+      { label: 'Website Redesign', path: '/services/website-redesign' },
+      { label: 'Web Maintenance', path: '/services/web-maintenance' },
     ],
     digitalMarketing: [
-      { label: 'Social Media Marketing', path: '/services' },
-      { label: 'SEO Services', path: '/services' },
-      { label: 'Google Ads (PPC)', path: '/services' },
-      { label: 'Facebook & Instagram Ads', path: '/services' },
-      { label: 'YouTube Ads', path: '/services' },
-      { label: 'Content Marketing', path: '/services' },
-      { label: 'Email Marketing', path: '/services' },
-      { label: 'Influencer Marketing', path: '/services' },
+      { label: 'SEO Services', path: '/services/seo-services' },
+      { label: 'Social Media Marketing', path: '/services/social-media-marketing' },
+      { label: 'PPC Advertising', path: '/services/ppc-advertising' },
+      { label: 'Content Marketing', path: '/services/content-marketing' },
+      { label: 'Email Marketing', path: '/services/email-marketing' },
+      { label: 'Influencer Marketing', path: '/services/influencer-marketing' },
+      { label: 'Online Reputation Management', path: '/services/online-reputation-management' },
+      { label: 'Marketing Analytics', path: '/services/marketing-analytics' },
     ],
     creativeBranding: [
-      { label: 'Logo Design', path: '/services' },
-      { label: 'Brand Identity Design', path: '/services' },
-      { label: 'Graphic Design', path: '/services' },
-      { label: 'Video Editing & Production', path: '/services' },
-      { label: 'AI Video Creation', path: '/services' },
-      { label: 'Social Media Graphics', path: '/services' },
-      { label: 'Brochure & Flyer Design', path: '/services' },
+      { label: 'Logo Design', path: '/services/logo-design' },
+      { label: 'Brand Identity', path: '/services/brand-identity' },
+      { label: 'Graphic Design', path: '/services/graphic-design' },
+      { label: 'UI/UX Design', path: '/services/ui-ux-design' },
+      { label: 'Video Production', path: '/services/video-production' },
+      { label: 'Animation Services', path: '/services/animation-services' },
+      { label: 'Print Design', path: '/services/print-design' },
     ],
     businessSolutions: [
-      { label: 'Lead Generation', path: '/services' },
-      { label: 'CRM Solutions', path: '/services' },
-      { label: 'Marketing Automation', path: '/services' },
-      { label: 'Analytics & Reporting', path: '/services' },
-      { label: 'Conversion Optimization', path: '/services' },
-      { label: 'Online Reputation Management', path: '/services' },
-      { label: 'Business Consulting', path: '/services' },
+      { label: 'Business Consulting', path: '/services/business-consulting' },
+      { label: 'IT Consulting', path: '/services/it-consulting' },
+      { label: 'CRM Solutions', path: '/services/crm-solutions' },
+      { label: 'ERP Solutions', path: '/services/erp-solutions' },
+      { label: 'Cloud Services', path: '/services/cloud-services' },
+      { label: 'Cybersecurity', path: '/services/cybersecurity' },
+      { label: 'Mobile App Development', path: '/services/mobile-app-development' },
     ],
   };
 
@@ -256,27 +257,146 @@ const Navbar = () => {
           </div>
 
           {/* Menu Items */}
-          <div className="flex flex-col p-4 space-y-2 overflow-y-auto h-[calc(100%-80px)]">
+          <div className="flex flex-col p-3 space-y-1 overflow-y-auto h-[calc(100%-80px)]">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
-                  isActive(link.path)
-                    ? 'bg-primary text-white'
-                    : 'text-gray-700 hover:bg-secondary/10 hover:text-secondary'
-                }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.path}>
+                {link.hasDropdown ? (
+                  <div>
+                    <button
+                      onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-secondary/10 hover:text-secondary transition-all duration-300"
+                    >
+                      <span>{link.label}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          isMobileServicesOpen ? 'rotate-180' : ''
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    
+                    {/* Services Dropdown */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        isMobileServicesOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div className="pl-3 pr-1 py-1 space-y-2">
+                        {/* Website Services */}
+                        <div>
+                          <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider px-3 py-1 border-b border-secondary/30">
+                            Website Services
+                          </h4>
+                          <div className="space-y-0.5 mt-1">
+                            {megaMenuData.websiteServices.map((item, index) => (
+                              <Link
+                                key={index}
+                                to={item.path}
+                                onClick={() => {
+                                  setIsMenuOpen(false);
+                                  setIsMobileServicesOpen(false);
+                                }}
+                                className="block px-3 py-1.5 text-xs text-gray-600 hover:text-secondary hover:bg-secondary/5 rounded transition-all duration-200"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Digital Marketing */}
+                        <div>
+                          <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider px-3 py-1 border-b border-secondary/30">
+                            Digital Marketing
+                          </h4>
+                          <div className="space-y-0.5 mt-1">
+                            {megaMenuData.digitalMarketing.map((item, index) => (
+                              <Link
+                                key={index}
+                                to={item.path}
+                                onClick={() => {
+                                  setIsMenuOpen(false);
+                                  setIsMobileServicesOpen(false);
+                                }}
+                                className="block px-3 py-1.5 text-xs text-gray-600 hover:text-secondary hover:bg-secondary/5 rounded transition-all duration-200"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Creative & Branding */}
+                        <div>
+                          <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider px-3 py-1 border-b border-secondary/30">
+                            Creative & Branding
+                          </h4>
+                          <div className="space-y-0.5 mt-1">
+                            {megaMenuData.creativeBranding.map((item, index) => (
+                              <Link
+                                key={index}
+                                to={item.path}
+                                onClick={() => {
+                                  setIsMenuOpen(false);
+                                  setIsMobileServicesOpen(false);
+                                }}
+                                className="block px-3 py-1.5 text-xs text-gray-600 hover:text-secondary hover:bg-secondary/5 rounded transition-all duration-200"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Business Solutions */}
+                        <div>
+                          <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider px-3 py-1 border-b border-secondary/30">
+                            Business Solutions
+                          </h4>
+                          <div className="space-y-0.5 mt-1">
+                            {megaMenuData.businessSolutions.map((item, index) => (
+                              <Link
+                                key={index}
+                                to={item.path}
+                                onClick={() => {
+                                  setIsMenuOpen(false);
+                                  setIsMobileServicesOpen(false);
+                                }}
+                                className="block px-3 py-1.5 text-xs text-gray-600 hover:text-secondary hover:bg-secondary/5 rounded transition-all duration-200"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      isActive(link.path)
+                        ? 'bg-primary text-white'
+                        : 'text-gray-700 hover:bg-secondary/10 hover:text-secondary'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
             ))}
             
             {/* Get Started Button */}
             <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-3 rounded-lg text-base font-medium bg-primary text-white text-center mt-4 shadow-md hover:shadow-lg hover:bg-secondary transition-all duration-300 cursor-pointer"
+              className="px-3 py-2 rounded-lg text-sm font-medium bg-primary text-white text-center mt-3 shadow-md hover:shadow-lg hover:bg-secondary transition-all duration-300 cursor-pointer"
             >
               Get Started
             </Link>

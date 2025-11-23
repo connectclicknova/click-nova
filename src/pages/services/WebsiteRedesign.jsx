@@ -5,7 +5,7 @@ import FloatingContactButton from '../../components/FloatingContactButton';
 const WebsiteRedesign = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-gray-50 py-6 sm:py-8 pt-[120px]">
+      <section className="bg-gray-50 pb-6 sm:pb-8 pt-[120px]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-sm mb-4">
             <Link to="/" className="text-gray-600 hover:text-primary transition-colors">HOME</Link>

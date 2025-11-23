@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SEO from '../components/SEO';
+import FloatingContactButton from '../components/FloatingContactButton';
 import { db } from '../firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -411,6 +412,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating Contact Button */}
+      <FloatingContactButton />
     </div>
   );
 };

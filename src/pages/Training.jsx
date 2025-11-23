@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TrainingModal from '../components/TrainingModal';
 import SEO from '../components/SEO';
+import FloatingContactButton from '../components/FloatingContactButton';
 
 const Training = () => {
   const [isTrainingModalOpen, setIsTrainingModalOpen] = useState(false);
@@ -280,6 +281,9 @@ const Training = () => {
           </Link>
         </div>
       </section>
+      
+      {/* Floating Contact Button */}
+      <FloatingContactButton />
     </div>
   );
 };

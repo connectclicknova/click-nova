@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FreeQuoteModal from '../components/FreeQuoteModal';
 import SEO from '../components/SEO';
+import FloatingContactButton from '../components/FloatingContactButton';
 
 const Services = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -445,6 +446,9 @@ const Services = () => {
           </Link>
         </div>
       </section>
+      
+      {/* Floating Contact Button */}
+      <FloatingContactButton />
     </div>
   );
 };

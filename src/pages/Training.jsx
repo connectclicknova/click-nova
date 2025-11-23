@@ -114,9 +114,9 @@ const Training = () => {
   return (
     <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
-        title="Professional Training Programs - Web Development, Mobile App Development | Click Nova"
-        description="Transform your career with Click Nova's comprehensive training programs. Learn Full Stack Development, Front-End Development, Back-End Development, Mobile App Development, Digital Marketing, and Software Development from industry experts."
-        keywords="web development training, mobile app development courses, full stack developer training, front-end development course, back-end development training, digital marketing training, software development courses, programming training"
+        title="Professional Training Programs India - Web Development, Mobile App, Digital Marketing Courses | Click Nova"
+        description="Join India's best professional training programs at Click Nova. Learn Full Stack Development, Front-End Development, Back-End Development, Mobile App Development (iOS/Android), Digital Marketing, SEO, Social Media Marketing, and Software Development from certified industry experts. 100% placement assistance, hands-on projects, and lifetime support."
+        keywords="professional training programs, web development training, mobile app development courses, full stack developer training, front-end development course, back-end development training, digital marketing training, SEO training, social media marketing course, software development courses, programming training, coding bootcamp, React training, Node.js training, Python training, JavaScript course, digital marketing certification, placement training, career training programs, online training courses, IT training institute"
         canonical="https://www.clicknova.in/training"
       />
       <TrainingModal isOpen={isTrainingModalOpen} onClose={() => setIsTrainingModalOpen(false)} />

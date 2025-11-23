@@ -252,9 +252,9 @@ const Services = () => {
   return (
     <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
-        title="Digital Marketing Services - Social Media, Google Ads, Website Development | Click Nova"
-        description="Expert digital marketing services including social media marketing, Facebook ads, Google ads, Instagram ads, YouTube ads, SEO, PPC advertising, website development, ecommerce websites, mobile app development, and software development."
-        keywords="digital marketing services, social media marketing, Facebook ads management, Google ads services, Instagram ads, YouTube advertising, SEO services, PPC advertising, website development services, ecommerce website development, mobile app development services, software development, content marketing, email marketing"
+        title="Digital Marketing Services India - #1 Social Media, Google Ads, SEO, Website Development Company | Click Nova"
+        description="Get top-rated digital marketing services in India. Expert social media marketing, Facebook Ads, Google Ads, Instagram Ads, YouTube Ads, SEO services, PPC advertising, website development, ecommerce solutions, mobile app development, and custom software development. Proven ROI-driven strategies for your business growth."
+        keywords="digital marketing services, digital marketing services in India, social media marketing services, Facebook ads management, Google ads services, Instagram advertising services, YouTube ads management, SEO services, SEO company India, local SEO services, PPC advertising services, pay per click management, website development services, web design services, ecommerce website development, online store development, mobile app development services, iOS app development, Android app development, software development services, custom software solutions, content marketing services, email marketing services, influencer marketing, video marketing services, brand strategy services, logo design services, conversion rate optimization, marketing automation services, analytics services, affordable digital marketing, ROI focused marketing services"
         canonical="https://www.clicknova.in/services"
       />
       <FreeQuoteModal 

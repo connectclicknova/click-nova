@@ -59,7 +59,7 @@ const Navbar = () => {
               to="/contact"
               className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Get Started
+              Book a Call
             </Link>
           </div>
 

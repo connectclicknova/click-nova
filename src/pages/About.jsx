@@ -1,13 +1,14 @@
 import React from 'react';
 import SEO from '../components/SEO';
+import FloatingContactButton from '../components/FloatingContactButton';
 
 const About = () => {
   return (
     <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
-        title="About Click Nova - Best Digital Marketing Agency | Expert Team"
-        description="Learn about Click Nova, a leading digital marketing agency specializing in social media marketing, Google ads, Facebook ads, website development, mobile app development, and software development. Expert team delivering innovative solutions."
-        keywords="about click nova, digital marketing agency, social media marketing experts, Google ads specialists, Facebook advertising agency, website development company, mobile app developers, software development services"
+        title="About Click Nova - India's Leading Digital Marketing Agency | 150+ Happy Clients | Expert Team"
+        description="Discover Click Nova - India's premier digital marketing agency since 2018. With 50+ expert professionals and 150+ successful projects, we specialize in social media marketing, Google Ads, Facebook Ads, SEO services, website development, mobile app development, and custom software solutions. Award-winning team delivering innovative, ROI-driven digital marketing strategies."
+        keywords="about click nova, click nova digital marketing, best digital marketing agency India, top digital marketing company, digital marketing agency team, expert digital marketers, certified digital marketing professionals, social media marketing experts, Google ads specialists, Facebook advertising experts, SEO experts India, website development company, mobile app developers, software development services, digital agency portfolio, marketing agency experience, trusted digital marketing partner, award winning digital agency"
         canonical="https://www.clicknova.in/about"
       />
       {/* Hero Section */}
@@ -237,6 +238,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating Contact Button */}
+      <FloatingContactButton />
     </div>
   );
 };

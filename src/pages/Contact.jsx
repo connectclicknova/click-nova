@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SEO from '../components/SEO';
+import FloatingContactButton from '../components/FloatingContactButton';
 import { db } from '../firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -113,9 +114,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen" style={{paddingTop: '100px'}}>
       <SEO 
-        title="Contact Click Nova - Best Digital Marketing Agency | Get in Touch"
-        description="Contact Click Nova for digital marketing services including social media marketing, Google ads, Facebook ads, Instagram ads, website development, mobile app development, and software development. Reach us for inquiries and consultations."
-        keywords="contact digital marketing agency, click nova contact, social media marketing inquiry, google ads consultation, website development contact, mobile app development inquiry, software development services"
+        title="Contact Click Nova - Get Free Digital Marketing Consultation | Best Agency in India | Call Now"
+        description="Contact Click Nova for a FREE digital marketing consultation. Get expert help with social media marketing, Google Ads, Facebook Ads, Instagram Ads, SEO services, website development, mobile app development, and software solutions. Available 24/7 for inquiries. Call us today for customized marketing strategies and guaranteed results!"
+        keywords="contact digital marketing agency, click nova contact, digital marketing consultation, free marketing consultation, social media marketing inquiry, Google ads consultation, Facebook ads inquiry, SEO consultation, website development contact, ecommerce website inquiry, mobile app development contact, software development inquiry, digital marketing agency near me, call digital marketing agency, email marketing agency, get free quote, request proposal, business inquiry, partnership opportunities"
         canonical="https://www.clicknova.in/contact"
       />
       {/* Hero Section */}
@@ -411,6 +412,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating Contact Button */}
+      <FloatingContactButton />
     </div>
   );
 };

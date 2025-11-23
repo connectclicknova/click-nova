@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SEO from '../components/SEO';
 import FloatingContactButton from '../components/FloatingContactButton';
+import Newsletter from '../components/Newsletter';
 import { db } from '../firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -412,6 +413,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <Newsletter />
       
       {/* Floating Contact Button */}
       <FloatingContactButton />

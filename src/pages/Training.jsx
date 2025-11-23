@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TrainingModal from '../components/TrainingModal';
 import SEO from '../components/SEO';
 import FloatingContactButton from '../components/FloatingContactButton';
+import Newsletter from '../components/Newsletter';
 
 const Training = () => {
   const [isTrainingModalOpen, setIsTrainingModalOpen] = useState(false);
@@ -264,23 +265,8 @@ const Training = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Start Your Learning Journey?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join thousands of students who have transformed their careers with our training programs
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-white text-primary px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
-          >
-            Get Started Today
-          </Link>
-        </div>
-      </section>
+      {/* Newsletter Section */}
+      <Newsletter />
       
       {/* Floating Contact Button */}
       <FloatingContactButton />

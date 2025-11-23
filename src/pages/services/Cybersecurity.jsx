@@ -5,7 +5,7 @@ import FloatingContactButton from '../../components/FloatingContactButton';
 const Cybersecurity = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-gray-50 py-6 sm:py-8">
+      <section className="bg-gray-50 py-6 sm:py-8 pt-[120px]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-sm mb-4">
             <Link to="/" className="text-gray-600 hover:text-primary transition-colors">HOME</Link>
@@ -51,7 +51,7 @@ const Cybersecurity = () => {
             </div>
           </div>
 
-          <div className="mb-12 bg-gradient-to-br from-primary to-blue-700 rounded-2xl p-6 sm:p-8 lg:p-12 text-white">
+          <div className="mb-12 bg-primary rounded-2xl p-6 sm:p-8 lg:p-12 text-white">
             <h3 className="text-2xl sm:text-3xl font-bold mb-6">Why Choose Click Nova?</h3>
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="flex gap-3">

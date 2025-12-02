@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo.png'
+import LogoVideo from '../assets/logo-animate.mp4'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,13 +72,32 @@ const Navbar = () => {
     ],
   };
 
+  const videoRef = useRef(null);
+
+  const handleEnded = () => {
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play();
+      }
+    }, 2500); // 2500ms delay before repeating
+  };
+
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center" style={{height: '80px'}}>
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={Logo} alt="Click Nova" className='w-[230px]' />
+            <video
+              ref={videoRef}
+              className="w-[230px]"
+              src={LogoVideo}
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleEnded}
+            />
           </Link>
 
           {/* Desktop Navigation */}

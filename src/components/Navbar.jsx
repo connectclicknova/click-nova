@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo.png'
-import LogoVideo from '../assets/Logo.mp4'
+import LogoVideo from '../assets/logo-animate.mp4'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

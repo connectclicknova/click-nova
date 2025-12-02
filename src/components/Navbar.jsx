@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobilePortfolioOpen, setIsMobilePortfolioOpen] = useState(false);
   const location = useLocation();
 
   // Lock body scroll when menu is open
@@ -25,11 +26,18 @@ const Navbar = () => {
 
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services', hasDropdown: true },
+    { path: '/services', label: 'Services', hasDropdown: true, dropdownType: 'services' },
+    { path: '/portfolio', label: 'Portfolio', hasDropdown: true, dropdownType: 'portfolio' },
     { path: '/about', label: 'About' },
     { path: '/training', label: 'Training' },
     { path: '/careers', label: 'Careers' },
     { path: '/contact', label: 'Contact' },
+  ];
+
+  const portfolioItems = [
+    { label: 'Websites', path: '/portfolio/websites' },
+    { label: 'Logo', path: '/portfolio/logo' },
+    { label: 'Creative Designs', path: '/portfolio/creative-designs' },
   ];
 
   const megaMenuData = {
@@ -122,7 +130,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Mega Menu Dropdown */}
-                {link.hasDropdown && (
+                {link.hasDropdown && link.dropdownType === 'services' && (
                   <div className="absolute left-1/2 transform -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
                     style={{ top: '100%' }}
                   >
@@ -196,6 +204,28 @@ const Navbar = () => {
                           </ul>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Portfolio Dropdown */}
+                {link.hasDropdown && link.dropdownType === 'portfolio' && (
+                  <div className="absolute left-1/2 transform -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+                    style={{ top: '100%' }}
+                  >
+                    <div className="bg-white shadow-2xl rounded-lg border border-gray-200 min-w-[200px]">
+                      <ul className="p-4 space-y-2">
+                        {portfolioItems.map((item, index) => (
+                          <li key={index}>
+                            <Link
+                              to={item.path}
+                              className="text-gray-600 hover:text-[#fc8d00] hover:pl-2 transition-all duration-200 text-sm block py-2"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 )}
@@ -280,7 +310,7 @@ const Navbar = () => {
           <div className="flex flex-col p-3 space-y-1 overflow-y-auto h-[calc(100%-80px)]">
             {navLinks.map((link) => (
               <div key={link.path}>
-                {link.hasDropdown ? (
+                {link.hasDropdown && link.dropdownType === 'services' ? (
                   <div>
                     <button
                       onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
@@ -393,6 +423,48 @@ const Navbar = () => {
                             ))}
                           </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : link.hasDropdown && link.dropdownType === 'portfolio' ? (
+                  <div>
+                    <button
+                      onClick={() => setIsMobilePortfolioOpen(!isMobilePortfolioOpen)}
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-secondary/10 hover:text-secondary transition-all duration-300"
+                    >
+                      <span>{link.label}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          isMobilePortfolioOpen ? 'rotate-180' : ''
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    
+                    {/* Portfolio Dropdown */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        isMobilePortfolioOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div className="pl-3 pr-1 py-1">
+                        {portfolioItems.map((item, index) => (
+                          <Link
+                            key={index}
+                            to={item.path}
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              setIsMobilePortfolioOpen(false);
+                            }}
+                            className="block px-3 py-1.5 text-xs text-gray-600 hover:text-secondary hover:bg-secondary/5 rounded transition-all duration-200"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </div>
